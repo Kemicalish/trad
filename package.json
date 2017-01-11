@@ -1,0 +1,22 @@
+{
+  "name": "trad",
+  "version": "0.0.1",
+  "description": "javascript trad lib to use with formated JSON files (works fine with https://github.com/Kemicalish/generator-trad)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kemicalish/trad.git"
+  },
+  "keywords": [
+    "localization"
+  ],
+  "author": "Mickaël Mouillé",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kemicalish/trad/issues"
+  },
+  "homepage": "https://github.com/Kemicalish/trad#readme"
+}
