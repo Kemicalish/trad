@@ -6,11 +6,12 @@ const _ = require('lodash');
 let texts = {};
 let root = null;
 
-exports.init = function (localizationRoot) {
+const init = function (localizationRoot) {
     root = localizationRoot.replace(/https?:/, '');
+    console.log(root);
 };
 
-exports.load = filename => new Promise((resolve, reject) => {
+const load = filename => new Promise((resolve, reject) => {
     request(path.join(protocol + root, filename + '.json'), function (error, response, body) {
         if (!error && response.statusCode === 200) {
             texts = _.chain(body)
@@ -23,10 +24,16 @@ exports.load = filename => new Promise((resolve, reject) => {
         } else {
             reject(response);
         }
-        
     });
 });
 
-exports.get = function (txtId) {
+const get = function (txtId) {
     return texts[txtId];
 };
+
+module.exports = {
+    init,
+    load,
+    get
+};
+
