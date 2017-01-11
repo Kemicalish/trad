@@ -5,6 +5,7 @@ const protocol = (window.location.href.split('/') || ['http:'])[0];
 const _ = require('lodash');
 let texts = {};
 let root = null;
+console.log('protocol', protocol);
 
 const init = function (localizationRoot) {
     root = localizationRoot.replace(/https?:/, '');
