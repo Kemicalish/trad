@@ -14,9 +14,10 @@ const init = function (localizationRoot) {
 
 const load = filename => new Promise((resolve, reject) => {
     let fullPath = protocol + root + '/' + filename + '.json';
-    console.log(path.join(protocol + root, filename + '.json'));
-    console.log(fullPath);
-    request(fullPath, function (error, response, body) {
+    request({
+        url: fullPath,
+        json: true
+    }, function (error, response, body) {
         if (!error && response.statusCode === 200) {
             texts = _.chain(body)
                 .map(entry => [entry.id, entry.value])
