@@ -7,7 +7,7 @@ let texts = {};
 let root = null;
 
 exports.init = function (localizationRoot) {
-    root = localizationRoot.replace(/https?:\/\//, '');
+    root = localizationRoot.replace(/https?:/, '');
 };
 
 exports.load = filename => new Promise((resolve, reject) => {
@@ -18,9 +18,12 @@ exports.load = filename => new Promise((resolve, reject) => {
                 .fromPairs()
                 .value();
             resolve(texts);
+        } else if (error) {
+            reject(error);
         } else {
             reject(response);
         }
+        
     });
 });
 
