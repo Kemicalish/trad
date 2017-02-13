@@ -1,6 +1,6 @@
 {
   "name": "trad",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "javascript trad lib to use with formated JSON files (works fine with https://github.com/Kemicalish/generator-trad)",
   "main": "index.js",
   "scripts": {
